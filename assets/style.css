@@ -1,0 +1,33 @@
+#buttons {
+	height: 100px;
+	padding: 20px;
+
+}
+button {
+	color: purple;
+	font-size: 20px;
+	margin: 10px;
+}
+
+h1 {
+	margin-top: 20px;
+	margin-left: 100px;
+	font-size: 48px;
+	font-family: 'Fredoka One', cursive;
+}
+
+#results {
+	margin: 50px 0px 0px 50px;
+
+}
+
+#add-button {
+	margin-left: 100px;
+	padding: 10px;
+	background-color: teal;
+	color: white;
+}
+
+#button-form {
+	margin-left: 40px;
+}
