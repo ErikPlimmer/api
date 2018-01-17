@@ -35,7 +35,7 @@ renderButtons();
 	    event.preventDefault();
 	    var input = $(this).attr("data-name");
 	    // Here we construct our URL
-	    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=JVLv3VEF12LSVuKjtAyPRJqws2Xvg2pO&limit=10";
+	    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=JVLv3VEF12LSVuKjtAyPRJqws2Xvg2pO&limit=10";
 	   console.log(queryURL);
 
 	    $.ajax({
@@ -97,7 +97,7 @@ renderButtons();
 
 	    var input = $(this).attr("data-name");
 	    // Here we construct our URL
-	    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=JVLv3VEF12LSVuKjtAyPRJqws2Xvg2pO&limit=10";
+	    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=JVLv3VEF12LSVuKjtAyPRJqws2Xvg2pO&limit=10";
 	   
 	   console.log(queryURL);
 
@@ -150,7 +150,7 @@ renderButtons();
 				});// thing function end 
     		
   });//done
-	  // starting and stoping animation funtion here
+
           
 });
 
