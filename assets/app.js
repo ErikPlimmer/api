@@ -29,70 +29,10 @@ $("#add-button").on("click", function(event) {
 	  $("#button-input").val("");
 renderButtons();
 
- 
- // This .on("click") function will trigger the AJAX Call
- $(".animal").on("click", function (event) {
-	    event.preventDefault();
-	    var input = $(this).attr("data-name");
-	    // Here we construct our URL
-	    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=JVLv3VEF12LSVuKjtAyPRJqws2Xvg2pO&limit=10";
-	   console.log(queryURL);
-
-	    $.ajax({
-	    url: queryURL,
-	    method: "GET"
-	  }).done(function(response) {
-
-  			var results = response.data;
-
-	        $("#results").append(response);
-
-	for (var i = 0; i < results.length; i++) {
-	   	 
-	   	 var animalDiv = $("<div>");
-
-			var rating = results[i].rating;
-
-          	var p = $("<p>").text("Rating: " + rating);
-
-          	var animalImage = $("<img>");
-          	animalImage.addClass("thing");
-          	animalImage.attr("src", results[i].images.fixed_height_still.url);
-            animalImage.attr({'data-animate' : results[i].images.fixed_height.url});
-            animalImage.attr({'data-state' : "still"});
-            animalImage.attr({'data-still' : results[i].images.fixed_height_still.url});
-     
-
-
-         	 animalDiv.prepend(p);
-        	 animalDiv.prepend(animalImage);
-
-        	  $("#results").prepend(animalDiv);
-
-        	  // console.log("data state is" , response.data-state);
-        	  console.log("results is" , results[i]);
-        	  console.log("input is" ,input);
-        	  // starting and stoping animation funtion here
-          	
-    }
-    $(".thing").on("click", function() {
-          		console.log("in the click image");
-          	var state = $(this).attr("data-state");
-				  if (state === "still") {
-				    $(this).attr("src", $(this).attr("data-animate"));
-				    $(this).attr("data-state", "animate");
-				  } else {
-				    $(this).attr("src", $(this).attr("data-still"));
-				    $(this).attr("data-state", "still");
-				  }
-				});// thing function end 
-    		
-  });//done
-});
 
 });
 
- $(".animal").on("click", function (event) {
+ $(document).on("click", ".animal", function (event) {
 	    event.preventDefault();
 
 	    var input = $(this).attr("data-name");
