@@ -19,23 +19,26 @@ function renderButtons() {
 	    $("#buttons").append(a);
   	}
 }// renderButtons function end
+
+
 renderButtons();
 
 
-$("#add-button").on("click", function(event) {
-	 event.preventDefault();
-	  var input = $("#button-input").val().trim();
-	  animalArray.push(input);
-	  $("#button-input").val("");
-renderButtons();
+	$("#add-button").on("click", function(event) {
+		 event.preventDefault();
+		  var input = $("#button-input").val().trim();
+		  animalArray.push(input);
+		  $("#button-input").val("");
+			renderButtons();
 
 
-});
+	});// add button end
 
  $(document).on("click", ".animal", function (event) {
 	    event.preventDefault();
 
 	    var input = $(this).attr("data-name");
+
 	    // Here we construct our URL
 	    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + input + "&api_key=JVLv3VEF12LSVuKjtAyPRJqws2Xvg2pO&limit=10";
 	   
@@ -71,11 +74,6 @@ renderButtons();
 
         	  $("#results").prepend(animalDiv);
 
-        	  // console.log("data state is" , response.data-state);
-        	  console.log("results is" , results[i]);
-        	  console.log("input is" ,input);
-
-
     }
     	$(".thing").on("click", function() {
           		console.log("in the click image");
@@ -89,8 +87,8 @@ renderButtons();
 				  }
 				});// thing function end 
     		
-  });//done
+  });// ajax call .done
 
           
-});
+}); // on click function end 
 
